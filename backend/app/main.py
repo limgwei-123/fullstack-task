@@ -37,7 +37,7 @@ def db_check():
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     new_user = User(
         email=user.email,
-        password_hashed=hash_password(user.password)  # ⚠️ 先明文，下一步再加 hash
+        password_hasheddddd=hash_password(user.password)  # ⚠️ 先明文，下一步再加 hash
     )
     db.add(new_user)
     db.commit()
