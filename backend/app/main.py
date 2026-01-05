@@ -19,6 +19,7 @@ def on_startup():
 
 @app.get("/health")
 def health():
+    trytry = True
     return {"status": "ok"}
 
 @app.get("/db-check")
