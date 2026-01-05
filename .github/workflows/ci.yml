@@ -7,6 +7,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/taskdb
 
     services:
       postgres:
@@ -37,11 +39,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r requirements-dev.txt
-
-      - name: Set env for tests
-        working-directory: backend
-        run: |
-          echo "DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/taskdb" >> $GITHUB_ENV
 
       - name: Run tests
         working-directory: backend
