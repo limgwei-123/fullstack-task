@@ -30,7 +30,7 @@ def db_check():
             with conn.cursor() as cur:
                 cur.execute("SELECT 1;")
                 row = cur.fetchone()
-        return {"db": "ok1111", "select": row[0]}
+        return {"db": "ok", "select": row[0]}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
